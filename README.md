@@ -5,6 +5,8 @@
 
 [Introduction](introduction)
 
+[ Project Relevance](#project-relevance)
+
 ## Project Overview
 - GoalBet is a leading sports data analytics company dedicated to
 providing comprehensive insights into various sporting events.
@@ -21,20 +23,16 @@ structured format such as CSV, JSON or Microsoft Excel. We
 then transform the data and put it in a persistent store, such as a
 database. Later on, this data is used by our data science team.
 
-## Project Objective
--As a data engineer, our primary responsibility is to design and implement robust data pipelines that
-facilitate the seamless flow of data from various sources into our analytical systems.
-We would be building an ETL pipeline to Extract, Transform and Load data into PostgreSQL.
+## Project Relevance
+  -The importance of this process is to ensure:
 
-The importance of this process is to ensure:
+   -- automation of data retrieval,
 
--- automation of data retrieval,
+   -- Data Quality
 
--- Data Quality
+   -- Data Reliability
 
--- Data Reliability
-
--- Storage in PostgreSQL
+   -- Storage in PostgreSQL
 
 ## Data Source
 - The data will be sourced from: https://www.football-data.co.uk/englandm.php
