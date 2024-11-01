@@ -1,11 +1,31 @@
 # GoalBet_Project
 - As Data Engineers, our primary responsibility is to design and implement robust data pipelines that facilitate the seamless flow of data from various sources into our analytical systems.  We would be building an ETL pipeline to Extract, Transform and Load data into PostgreSQL. 
 
-[Project Overview](project-overview)
+[Project Overview](#project-overview)
 
-[Introduction](introduction)
+[Introduction](#introduction)
 
 [ Project Relevance](#project-relevance)
+
+[Data Source](#data-source)
+
+[ETL Process Overview 1](#etl-process-overview-1)
+
+[ETL Process Overview 2](#etl-process-overview-2)
+
+[ETL Process Overview 3](#etl-process-Overview-3)
+
+[Staging Area](#staging-area)
+
+[ETL Process - New Data](#etl-process-new-data)
+
+[ETL Process - To Database](#etl-process-to-database)
+
+
+
+
+
+
 
 ## Project Overview
 - GoalBet is a leading sports data analytics company dedicated to
@@ -94,7 +114,7 @@ database. Later on, this data is used by our data science team.
 
      -- Windows OS File Explorer is used as the transformation area for historical data
 
-## ETL Pipeline Architecture
+## Staging Area
      -- Architecture Diagram
 
 ## ETL Process - New Data
@@ -111,7 +131,7 @@ database. Later on, this data is used by our data science team.
      - The script constructs URLs dynamically based on the current season (e.g., E0.csv for the Premiership).It uses the requests library to send an HTTP GET request to the 
        specified URLs.The script checks the HTTP response status. If the status is 200 (OK), it proceeds to read the CSV data. If not, it logs an error.
 
-##  ETL Process -To Database
+##  ETL Process - To Database
       
 --ETL Stage 3 - Load
 
