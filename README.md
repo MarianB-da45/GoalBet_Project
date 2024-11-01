@@ -74,4 +74,39 @@ The importance of this process is to ensure:
      -- Merging
 
         - After extraction, individual CSV files for each league are merged into single file for loading to the DB
+ 
+  ## ETL Process Overview 3
+ --  ETL Stage 3 - Load
+
+  -- DB Connection – PostgreSQL:
+
+    - The script establishes a connection to a PostgreSQL database using SQLAlchemy's create_engine(), utilizing credentials
+       stored in environment variables.
+
+  -- Data Loading
+    - The cleaned merged file is loaded into the PostgreSQL database using the to_sql() method. The method appends new records to the specified table (one for each league) 
+      and handles any necessary schema definitions, based on the DataFrame structure.
+
+## Staging Area
+     -- Windows OS File Explorer is used as the staging area for historical data
+
+     -- Windows OS File Explorer is used as the transformation area for historical data
+
+## ETL Pipeline Architecture
+     -- Architecture Diagram
+
+## ETL Process - New Data
+   -- ETL Stage 1 - Transform
+
+      -- Cleaning:
+
+      - The script reads the CSV data into a Pandas DataFrame while specifying the columns to extract, thus ignoring any unnecessary data.
+
+      - We also convert the 'Date' column into a proper datetime format, ensuring consistency in date handling.
+
+    -- Filtering
+
+     - The script constructs URLs dynamically based on the current season (e.g., E0.csv for the Premiership).It uses the requests library to send an HTTP GET request to the 
+       specified URLs.The script checks the HTTP response status. If the status is 200 (OK), it proceeds to read the CSV data. If not, it logs an error.
+
 
