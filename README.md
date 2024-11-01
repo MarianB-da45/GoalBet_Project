@@ -21,12 +21,6 @@
 
 [ETL Process - To Database](#etl-process-to-database)
 
-
-
-
-
-
-
 ## Project Overview
 - GoalBet is a leading sports data analytics company dedicated to
 providing comprehensive insights into various sporting events.
@@ -75,7 +69,7 @@ database. Later on, this data is used by our data science team.
    ## ETL Process Overview 2
   --  ETL Stage 2 - Transform
 
-     -- Cleaning:
+     - Cleaning:
 
        - The script reads the CSV data into a Pandas DataFrame while specifying the columns to extract, thus ignoring any unnecessary data.
 
@@ -87,13 +81,13 @@ database. Later on, this data is used by our data science team.
 
        - Handling Missing Values: The script drops any rows that are entirely empty and resets the index of the DataFrame.
 
-    -- Formatting
+    - Formatting
 
        - A new column, 'season', is added to the DataFrame to indicate the season for each record.
 
        - The DataFrame is structured according to the specified fields (['Div’, ‘Season’, 'Date', 'Time', 'HomeTeam','AwayTeam', 'FTHG', 'FTAG’]
 
-     -- Merging
+     - Merging
 
         - After extraction, individual CSV files for each league are merged into single file for loading to the DB
  
@@ -105,7 +99,7 @@ database. Later on, this data is used by our data science team.
     - The script establishes a connection to a PostgreSQL database using SQLAlchemy's create_engine(), utilizing credentials
        stored in environment variables.
 
-  -- Data Loading
+  - Data Loading
     - The cleaned merged file is loaded into the PostgreSQL database using the to_sql() method. The method appends new records to the specified table (one for each league) 
       and handles any necessary schema definitions, based on the DataFrame structure.
 
@@ -120,13 +114,13 @@ database. Later on, this data is used by our data science team.
 ## ETL Process - New Data
    -- ETL Stage 1 - Transform
 
-      -- Cleaning:
+      - Cleaning:
 
       - The script reads the CSV data into a Pandas DataFrame while specifying the columns to extract, thus ignoring any unnecessary data.
 
       - We also convert the 'Date' column into a proper datetime format, ensuring consistency in date handling.
 
-    -- Filtering
+    - Filtering
 
      - The script constructs URLs dynamically based on the current season (e.g., E0.csv for the Premiership).It uses the requests library to send an HTTP GET request to the 
        specified URLs.The script checks the HTTP response status. If the status is 200 (OK), it proceeds to read the CSV data. If not, it logs an error.
@@ -137,7 +131,7 @@ database. Later on, this data is used by our data science team.
 
 - DB Connection – PostgreSQL:
 
-The script establishes a connection to a PostgreSQL database using SQLAlchemy's create_engine(), utilizing credentials stored in environment variables.
+  --The script establishes a connection to a PostgreSQL database using SQLAlchemy's create_engine(), utilizing credentials stored in environment variables.
 
 - Data Loading
 
