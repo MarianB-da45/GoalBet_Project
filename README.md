@@ -21,6 +21,8 @@
 
 [ETL Process - To Database](#etl-process-to-database)
 
+[Challenges and Solutions](#challenge-and-solutions)
+
 ## Project Overview
 - GoalBet is a leading sports data analytics company dedicated to
 providing comprehensive insights into various sporting events.
@@ -138,5 +140,13 @@ database. Later on, this data is used by our data science team.
  -- The filtered DataFrame, containing only new records, is loaded into the PostgreSQL database using the to_sql() method.The method
     appends new records to the specified table (one for each league) and handles any necessary schema definitions, based on the DataFrame
     structure.If there are no new records to load, it logs this as well.
+
+## Challenges and Solutions
+ -- Data Quality Issues
+
+   - Inconsistent Formats: The data retrieved from the external sources often had inconsistencies in date formats and missing values. For instance, some CSV files had date 
+     formats that varied between day/month/year and month/day/year.
+
+   - Missing Values: Key columns such as Time sometimes contained missing values, leading to incomplete data records.
 
 
