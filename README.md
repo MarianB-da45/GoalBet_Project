@@ -1,6 +1,10 @@
 # GoalBet_Project
 - As Data Engineers, our primary responsibility is to design and implement robust data pipelines that facilitate the seamless flow of data from various sources into our analytical systems.  We would be building an ETL pipeline to Extract, Transform and Load data into PostgreSQL. 
 
+[Project Overview](project-overview)
+
+[Introduction](introduction)
+
 ## Project Overview
 - GoalBet is a leading sports data analytics company dedicated to
 providing comprehensive insights into various sporting events.
@@ -108,5 +112,19 @@ The importance of this process is to ensure:
 
      - The script constructs URLs dynamically based on the current season (e.g., E0.csv for the Premiership).It uses the requests library to send an HTTP GET request to the 
        specified URLs.The script checks the HTTP response status. If the status is 200 (OK), it proceeds to read the CSV data. If not, it logs an error.
+
+##  ETL Process -To Database
+      
+--ETL Stage 3 - Load
+
+- DB Connection – PostgreSQL:
+
+The script establishes a connection to a PostgreSQL database using SQLAlchemy's create_engine(), utilizing credentials stored in environment variables.
+
+- Data Loading
+
+ -- The filtered DataFrame, containing only new records, is loaded into the PostgreSQL database using the to_sql() method.The method
+    appends new records to the specified table (one for each league) and handles any necessary schema definitions, based on the DataFrame
+    structure.If there are no new records to load, it logs this as well.
 
 
